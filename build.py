@@ -27,7 +27,7 @@ I_GRP = 'M2 9h20v6H2zM7 9v6M17 9v6'
 I_PANEL = 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v16M15 4v16'
 
 LD = """
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Asia Track (M) Sdn. Bhd.","description":"Pipeline fabrication, plumbing and water tank installation and refurbishment specialists in Sabah.","url":"https://www.asiatrack.com.my/","telephone":"+60126501885","email":"enquiry@asiatrack.com.my","address":{"@type":"PostalAddress","streetAddress":"11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre","addressLocality":"Kota Kinabalu","postalCode":"88300","addressRegion":"Sabah","addressCountry":"MY"},"areaServed":["Sabah","Malaysia"]}</script>"""
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Asia Track (M) Sdn. Bhd.","description":"Pipeline fabrication, plumbing and water tank installation and refurbishment specialists in Sabah.","url":"https://asiatrack.com.my/","telephone":"+60126501885","email":"enquiry@asiatrack.com.my","address":{"@type":"PostalAddress","streetAddress":"11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre","addressLocality":"Kota Kinabalu","postalCode":"88300","addressRegion":"Sabah","addressCountry":"MY"},"areaServed":["Sabah","Malaysia"]}</script>"""
 
 def head(title, desc, active):
     nav = ''.join(
@@ -358,7 +358,7 @@ pages['thank-you.html'] = head('Thank you | Asia Track', 'Thank you for your enq
 for name, content in pages.items():
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
         f.write(content)
-BASE='https://www.asiatrack.com.my/'
+BASE='https://asiatrack.com.my/'
 with open(os.path.join(OUT,'sitemap.xml'),'w') as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{BASE}{"" if n=="index.html" else n}</loc></url>\n' for n in pages if n!='thank-you.html')+'</urlset>\n')
 with open(os.path.join(OUT,'robots.txt'),'w') as f:
