@@ -22,6 +22,7 @@ I_CHECK = 'M5 12.5l4.5 4.5L19 7'
 I_USERS = 'M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M21 20v-1a4 4 0 0 0-3-3.9M16 4.2a3.5 3.5 0 0 1 0 6.6'
 I_TARGET = 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z'
 I_CYL = 'M5 6c0-1.4 3.1-2.5 7-2.5S19 4.6 19 6v12c0 1.4-3.1 2.5-7 2.5S5 19.4 5 18zM5 6c0 1.4 3.1 2.5 7 2.5S19 7.4 19 6'
+I_PUMP = 'M4 14h9a4 4 0 0 0 0-8h-1M4 14v5M13 6V4h4M8 14v-3a3 3 0 0 1 3-3'
 I_GRP = 'M2 9h20v6H2zM7 9v6M17 9v6'
 I_PANEL = 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v16M15 4v16'
 
@@ -70,7 +71,7 @@ CTA = '''<div class="cta" id="contact"><div class="wrap" data-reveal>
 <h2>Planning a pipeline or tank project?</h2>
 <p>Tell us your requirements and we will respond with a tailored solution and quotation.</p>
 <div class="btns">
-<a class="btn wa" href="https://wa.me/60126501885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20a%20quotation." target="_blank" rel="noopener">Send Enquiry via WhatsApp</a>
+<a class="btn wa" href="https://wa.me/60126451885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20a%20quotation." target="_blank" rel="noopener">Send Enquiry via WhatsApp</a>
 <a class="btn btn-ghost" href="mailto:enquiry@asiatrack.com.my">enquiry@asiatrack.com.my</a>
 </div></div></div>
 </main>
@@ -80,14 +81,13 @@ FOOT = f'''<footer><div class="wrap">
 <div class="cols">
 <div><a class="logo logo-on-dark" href="index.html" aria-label="Asia Track (M) Sdn. Bhd. home">{LOGO_IMG}</a>
 <p>Dependable pipeline, plumbing and water tank solutions for residential, commercial, industrial and infrastructure clients.</p></div>
-<div><h4>East Malaysia Office (HQ)</h4><p>11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre, 88300 Kota Kinabalu, Sabah</p>
-<h4 style="margin-top:18px">West Malaysia Office</h4><p>Suite B-3-6, Level 3, Wisma Pantai, Bangsar Trade Centre, 5, Jalan 4/83A Off Jalan Pantai Baru, 59200 Kuala Lumpur</p></div>
+<div><h4>Head Office</h4><p>11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre, 88300 Kota Kinabalu, Sabah</p></div>
 <div><h4>Contact</h4><p><a href="tel:+60126501885">012-650 1885</a><br><a href="mailto:enquiry@asiatrack.com.my">enquiry@asiatrack.com.my</a></p>
 <h4 style="margin-top:18px">Explore</h4><p><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="products.html">Products</a> · <a href="portfolio.html">Portfolio</a></p></div>
 </div>
 <div class="legal"><span>© Asia Track (M) Sdn. Bhd. All rights reserved.</span><span>Website redesign prototype</span></div>
 </div></footer>
-<a class="fab" href="https://wa.me/60126501885" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.2.3-.3.5l-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg></a>
+<a class="fab" href="https://wa.me/60126451885" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.2.3-.3.5l-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg></a>
 <script src="assets/motion.js"></script>
 <script src="assets/hero3d.js"></script>
 <script src="assets/site.js"></script>
@@ -112,6 +112,7 @@ PROJECTS = [
 
 PROJ_IMG = {
  'HDG Water Retention Tank': ('hdg-tank.jpg', 'HDG sectional panel water tank on concrete supports'),
+ 'MSCL Pipe Installation': ('mscl-pipe.jpg', 'Cement lined MSCL pipe elbows with brass flanges ready for installation'),
  'Biogas Pipeline Fabrication': ('hdpe-pipeline.jpg', 'Black pipeline with a flanged joint on steel supports at a palm oil site'),
  'Air Pipeline Fabrication': ('air-pipeline.jpg', 'Compressed air pipework and filters beside a blue compressor'),
  'Water Tank Installation': ('tank-install.jpg', 'Inside a sectional panel tank during panel assembly'),
@@ -139,11 +140,11 @@ pages = {}
 
 # HOME
 home = head('Asia Track (M) Sdn. Bhd. | Pipe Fabrication & Water Tank Solutions, Sabah',
-            'Asia Track (M) Sdn. Bhd. — pipe fabrication, FRP/GRP supply and water tank installation, maintenance and repair for industrial, commercial and infrastructure projects in Sabah.', 'index.html')
+            'Asia Track (M) Sdn. Bhd. — pipe fabrication, tank and pump supply and water tank installation, maintenance and repair for industrial, commercial and infrastructure projects in Sabah.', 'index.html')
 home += f'''<div id="top" class="hero"><div class="blueprint" aria-hidden="true"></div><div class="wrap">
 <div><div class="eyebrow" data-reveal>Sabah · Pipeline &amp; Water Tank Specialists</div>
 <h1 data-reveal>Excellence in every drop. <em>Strength in every pipe.</em></h1>
-<p class="lead" data-reveal>Pipe fabrication, FRP &amp; GRP supply, and water tank installation, maintenance and repair, engineered to project specifications for industrial, commercial and infrastructure clients.</p>
+<p class="lead" data-reveal>Pipe fabrication, water pump and stainless steel tank supply, and tank installation and refurbishment, engineered to project specifications for industrial, commercial and infrastructure clients.</p>
 <div class="hero-cta" data-reveal><a class="btn btn-primary" href="#contact">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 <a class="btn btn-ghost" href="portfolio.html">View Our Projects</a></div></div>
 <div class="hero-visual" data-3d="home" aria-hidden="true">{FALLBACK_SVG}<span class="ph-note">Placeholder graphic</span></div>
@@ -160,15 +161,15 @@ home += f'''<div id="top" class="hero"><div class="blueprint" aria-hidden="true"
 <article class="svc" data-reveal data-tilt><div class="ico">{ico(I_PIPE)}</div><h3>Pipe Fabrication</h3>
 <p>End-to-end pipeline fabrication: cutting, welding, jointing, surface treatment and quality inspection, in conventional and GRP materials.</p>
 <ul class="chips"><li>MS</li><li>SS</li><li>MSCL</li><li>HDG</li><li>HDPE</li><li>GRP</li></ul><a class="more" href="services.html">Explore pipe fabrication <span aria-hidden="true">→</span></a></article>
-<article class="svc alt" data-reveal data-tilt><div class="ico">{ico(I_TANK)}</div><h3>Tank Installation, Maintenance &amp; Repair</h3>
+<article class="svc alt" data-reveal data-tilt><div class="ico">{ico(I_TANK)}</div><h3>Tank Installation &amp; Refurbishment</h3>
 <p>New tank installation, preventive maintenance, and repair and rectification: leak repairs, structural restoration and component replacement.</p>
-<ul class="chips"><li>New installation</li><li>Maintenance</li><li>Repair &amp; rectification</li></ul><a class="more" href="services.html#tanks">Explore tank services <span aria-hidden="true">→</span></a></article>
+<ul class="chips"><li>New installation</li><li>Refurbishment</li><li>Maintenance &amp; repair</li></ul><a class="more" href="services.html#tanks">Explore tank services <span aria-hidden="true">→</span></a></article>
 </div></div></section>
 <section id="products" class="products"><div class="wrap">
 {sec_head('Our Products', 'Engineered water storage &amp; piping', 'Supplied to project specifications with consistent quality and on-time delivery.')}
 <div class="grid3 persp">
-<article class="prod" data-reveal data-tilt><div class="img">{photo('frp-tank.jpg','FRP round tank on a concrete base with a flanged outlet pipe','pos-mid')}</div><div class="body"><h3>FRP Round Tank</h3><p>Open or closed top, built for harsh and aggressive environments with minimal maintenance.</p><ul><li>Corrosion and chemical resistant</li><li>Lightweight yet strong</li><li>Sewerage, process and water storage</li></ul><a class="tag" href="products.html#frp">Learn more <span aria-hidden="true">→</span></a></div></article>
-<article class="prod" data-reveal data-tilt><div class="img">{photo('grp-pipe.jpg','GRP pipe elbows with brass flanges')}</div><div class="body"><h3>GRP Pipe</h3><p>Glass reinforced plastic pipe with a high strength-to-weight ratio and long service life.</p><ul><li>Resists corrosion, chemicals, moisture</li><li>Indoor and outdoor installation</li><li>Water, sewerage, drainage, industrial</li></ul><a class="tag" href="products.html#grp">Learn more <span aria-hidden="true">→</span></a></div></article>
+<article class="prod" data-reveal data-tilt><div class="img">{photo('tank-install.jpg','Stainless steel tank panel assembly')}</div><div class="body"><h3>Stainless Steel Tank</h3><p>Hygienic, long-lasting sectional tanks, ideal for potable water storage.</p><ul><li>Corrosion resistant, easy to clean</li><li>Modular panels, flexible capacity</li><li>Residential, commercial, industrial</li></ul><a class="tag" href="products.html#ss">Learn more <span aria-hidden="true">→</span></a></div></article>
+<article class="prod" data-reveal data-tilt><div class="img">{photo('pump-valves.jpg','Water pump station with valves and pipework')}</div><div class="body"><h3>Water Pumps</h3><p>Four pump types supplied, installed and serviced for water supply and treatment systems.</p><ul><li>Booster and transfer pumps</li><li>Submersible and centrifugal pumps</li><li>Supply, installation and servicing</li></ul><a class="tag" href="products.html#pumps">Learn more <span aria-hidden="true">→</span></a></div></article>
 <article class="prod" data-reveal data-tilt><div class="img">{photo('hdg-tank.jpg','HDG sectional panel water tank')}</div><div class="body"><h3>Sectional Panel Tanks</h3><p>Modular panel system for flexible capacities and efficient installation, for potable and non-potable water.</p><ul><li>HDG, SS, FRP or GRP panels</li><li>Residential, commercial, industrial</li><li>Built to industry standards</li></ul><a class="tag" href="products.html#sectional">Learn more <span aria-hidden="true">→</span></a></div></article>
 </div></div></section>
 <div class="materials"><div class="wrap row"><h2 data-reveal>Materials we work with</h2><div class="mats">
@@ -207,9 +208,8 @@ home += f'''<div id="top" class="hero"><div class="blueprint" aria-hidden="true"
 pages['index.html'] = home
 
 # ABOUT
-TEAM = [('SP', 'Mr. Segaran Pillai', 'Chief Executive Officer'), ('WA', 'Mr. Wazir Ahmed Taquiddin', 'Director / Chief Financial Officer'),
-        ('SJ', 'Mrs. Selvasutha Jayabalan', 'Director / Administration'), ('DM', 'Dr. Dinesh Mathavan', 'Director / Human Resources'),
-        ('MA', 'Mohd. Aswan', 'Site Supervisor'), ('EA', 'Ms. Eviana Binti Alan', 'Admin')]
+TEAM = [('SP', 'Mr. Segaran Pillai', 'Chief Executive Officer'),
+        ('SJ', 'Mrs. Selvasutha Jayabalan', 'Director / Administration'), ('DM', 'Dr. Dinesh Mathavan', 'Director / Human Resources'),]
 about = head('About Asia Track | Pipeline & Tank Specialists, Sabah', 'Asia Track (M) Sdn. Bhd. is an engineering-driven pipeline and tank company supporting Malaysia’s water and process industries.', 'about.html')
 about += phero('About', 'Precision. Reliability. <em>Performance.</em>',
                'An engineering-driven company focused on pipeline systems and tank solutions that support essential infrastructure and industrial operations.', 'about')
@@ -282,10 +282,10 @@ services += f'''<section id="pipe"><div class="wrap split">
 pages['services.html'] = services
 
 # PRODUCTS
-products = head('Products | FRP Tanks, GRP Pipe, Sectional Panel Tanks — Asia Track', 'FRP round tanks, GRP pipes and sectional panel tanks (HDG, SS, FRP, GRP) supplied to project specifications.', 'products.html')
+products = head('Products | Stainless Steel Tanks, Water Pumps, Sectional Panel Tanks — Asia Track', 'Stainless steel tanks, water pumps and HDG sectional panel tanks supplied to project specifications.', 'products.html')
 products += phero('Products', 'Engineered water storage <em>&amp; piping</em>',
                   'Reliable supply solutions tailored to project requirements, with consistent quality, long service performance and on-time delivery.', 'products')
-PD_IMG = {'FRP Round Tank': ('frp-tank.jpg', 'FRP round tank on a concrete base with a flanged outlet pipe', 'pos-mid'), 'GRP Pipe': ('grp-pipe.jpg', 'GRP pipe elbows with brass flanges'), 'Sectional Panel Tanks': ('hdg-tank.jpg', 'HDG sectional panel water tank')}
+PD_IMG = {'Stainless Steel Tank': ('tank-install.jpg', 'Stainless steel tank panel assembly'), 'Water Pumps': ('pump-valves.jpg', 'Water pump station with valves and pipework'), 'Sectional Panel Tanks': ('hdg-tank.jpg', 'HDG sectional panel water tank')}
 def pdetail(idn, flip, title, icon, intro, lists, closing):
     blocks = ''.join(f'<h4>{h}</h4><ul class="check">{"".join(f"<li>{i}</li>" for i in items)}</ul>' for h, items in lists)
     return f'''<div class="pdetail{" flip" if flip else ""}" id="{idn}">
@@ -293,19 +293,19 @@ def pdetail(idn, flip, title, icon, intro, lists, closing):
 <div data-reveal><h2>{title}</h2>{intro}{blocks}<p style="margin-top:20px;color:var(--muted-fg)">{closing}</p>
 <p style="margin-top:20px"><a class="btn btn-primary" href="#contact">Enquire about {title}</a></p></div></div>'''
 products += '<section><div class="wrap">' + \
- pdetail('frp', False, 'FRP Round Tank', I_CYL,
-  '<p>FRP (Fibre Reinforced Plastic) round tanks in open and closed top configurations, designed for reliable performance across industrial and utility sectors, with excellent durability, corrosion resistance and long-term service life. Engineered to withstand harsh environments and aggressive media with low maintenance requirements.</p>',
-  [('Applications', ['Sewerage systems', 'Process industries', 'Water treatment and storage']),
-   ('Key features', ['Excellent resistance to corrosion and chemicals', 'Lightweight yet strong construction', 'Suitable for harsh and aggressive environments', 'Open or closed top configurations', 'Long service life with minimal maintenance'])],
-  'A dependable and cost-effective storage solution for sewerage, process and water applications.') + \
- pdetail('grp', True, 'GRP Pipe', I_GRP,
-  '<p>Glass Reinforced Plastic pipes engineered for durability, structural strength and superior corrosion resistance. Manufactured using advanced composite technology, GRP pipes offer consistent quality and suit projects requiring efficient installation and dependable service life.</p>',
-  [('Key advantages', ['Excellent resistance to corrosion, chemicals and moisture', 'High strength-to-weight ratio for easier handling and transport', 'Long service life with minimal maintenance', 'Suitable for indoor and outdoor installation']),
-   ('Applications', ['Water supply and wastewater systems', 'Sewerage and drainage infrastructure', 'Industrial, process and utility applications'])],
-  'Supplied to meet project specifications, with consistent quality, performance and on-time delivery.') + \
+ pdetail('ss', False, 'Stainless Steel Tank', I_CYL,
+  '<p>Stainless steel sectional tanks for hygienic, long-lasting water storage. The modular panel system allows flexible sizing and efficient installation for residential, commercial and industrial sites.</p>',
+  [('Key features', ['Hygienic and easy to clean, ideal for potable water', 'Excellent corrosion resistance and long service life', 'Modular design for flexible tank capacities', 'Built to industry standards and project specifications']),
+   ('Applications', ['Potable water storage', 'Commercial and industrial buildings', 'Process and utility water'])],
+  'Supplied with installation, refurbishment and after-sales support.') + \
+ pdetail('pumps', True, 'Water Pumps', I_PUMP,
+  '<p>Water pumps for supply, boosting and transfer, selected to match your flow and pressure requirements, with installation and servicing by our team.</p>',
+  [('Pump range', ['Booster pumps', 'Submersible pumps', 'Centrifugal pumps', 'Transfer pumps']),
+   ('Applications', ['Building water supply and pressure boosting', 'Water treatment plants and pump stations', 'Industrial and process systems'])],
+  'Supply, installation and servicing available.') + \
  pdetail('sectional', False, 'Sectional Panel Tanks', I_PANEL,
   '<p>High-quality sectional panel tanks for reliable water storage in residential, commercial and industrial applications. A modular panel system allows flexible sizing and efficient installation to suit various site requirements, while maintaining compliance with project specifications and water industry standards.</p>',
-  [('Available materials', ['HDG (Hot-Dip Galvanized Steel) — durable and corrosion-resistant, suited to outdoor and utility installations', 'SS (Stainless Steel) — hygienic and long-lasting, ideal for potable water', 'FRP (Fibre Reinforced Plastic) — lightweight, corrosion-resistant, low maintenance', 'GRP (Glass Reinforced Plastic) — high strength and chemical resistance for harsh environments']),
+  [('Available materials', ['HDG (Hot-Dip Galvanized Steel) — durable and corrosion-resistant, suited to outdoor and utility installations', 'FRP (Fibre Reinforced Plastic) — lightweight, corrosion-resistant, low maintenance', 'GRP (Glass Reinforced Plastic) — high strength and chemical resistance for harsh environments']),
    ('Key features', ['Modular design for flexible tank capacities', 'Strong and durable construction', 'Suitable for potable and non-potable water storage', 'Designed to meet industry standards and project specifications'])],
   'Authorised dealer and installer for East Malaysia in partnership with Star Brothers Engineering Sdn. Bhd., with supply, installation and after-sales support.') + \
  '</div></section>' + CTA + FOOT
