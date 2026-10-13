@@ -2,7 +2,7 @@ import os, html
 OUT = os.path.join(os.path.dirname(__file__), 'site')
 
 NAV = [('index.html', 'Home'), ('about.html', 'About'), ('services.html', 'Services'),
-       ('products.html', 'Products'), ('portfolio.html', 'Portfolio'), ('#contact', 'Contact')]
+       ('products.html', 'Products'), ('portfolio.html', 'Portfolio'), ('contact.html', 'Contact')]
 
 LOGO_IMG = '<img class="logo-img" src="assets/img/logo.png" alt="Asia Track" width="131" height="52"><small class="logo-sub">(M) Sdn. Bhd.</small>'
 LOGO = '''<span class="logo-mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h8a3 3 0 0 1 3 3v2a3 3 0 0 0 3 3h4"/><path d="M12 3v3M21 13v6M3 5v6"/></svg></span>'''
@@ -29,7 +29,7 @@ I_PANEL = 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v16M15 4v16'
 LD = """
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Asia Track (M) Sdn. Bhd.","description":"Pipeline fabrication, plumbing and water tank installation and refurbishment specialists in Sabah.","url":"https://asiatrack.com.my/","telephone":"+60126451885","email":"info@asiatrack.com.my","address":{"@type":"PostalAddress","streetAddress":"11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre","addressLocality":"Kota Kinabalu","postalCode":"88300","addressRegion":"Sabah","addressCountry":"MY"},"areaServed":["Sabah","Malaysia"],"sameAs":["https://web.facebook.com/asiatrackofficial/","https://www.instagram.com/asiatrackofficial/"]}</script>"""
 
-VT_JS = r'''<script>(function(){var o=['index','about','services','products','portfolio'];function k(u){var p=new URL(u,location.href).pathname.replace(/\/+$/,'').split('/').pop().replace(/\.html$/,'');return p||'index'}function d(a,b){return o.indexOf(k(b))<o.indexOf(k(a))?'back':'fwd'}
+VT_JS = r'''<script>(function(){var o=['index','about','services','products','portfolio','contact'];function k(u){var p=new URL(u,location.href).pathname.replace(/\/+$/,'').split('/').pop().replace(/\.html$/,'');return p||'index'}function d(a,b){return o.indexOf(k(b))<o.indexOf(k(a))?'back':'fwd'}
 addEventListener('pageswap',function(e){try{if(e.viewTransition&&e.activation&&e.activation.from&&e.activation.entry)document.documentElement.dataset.dir=d(e.activation.from.url,e.activation.entry.url)}catch(x){}});
 addEventListener('pagereveal',function(e){try{if(e.viewTransition&&navigation.activation&&navigation.activation.from){document.documentElement.dataset.dir=d(navigation.activation.from.url,navigation.activation.entry.url);document.documentElement.classList.add('vt')}}catch(x){}});})();</script>'''
 
@@ -66,7 +66,7 @@ def head(title, desc, active):
 <header class="nav"><div class="wrap">
   <a class="logo" href="index.html" aria-label="Asia Track (M) Sdn. Bhd. home">{LOGO_IMG}</a>
   <nav aria-label="Main"><ul id="menu">{nav}</ul></nav>
-  <a class="btn btn-primary nav-cta" href="#contact">Get a Quote</a>
+  <a class="btn btn-primary nav-cta" href="contact.html">Get a Quote</a>
   <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </div></header>
 <main id="main">
@@ -83,7 +83,7 @@ def phero(crumb, h1, lead, variant):
 </div></div>
 <div class="pcontent">'''
 
-CTA = '''<div class="cta" id="contact"><div class="wrap cta-grid">
+CONTACT_BLOCK = '''<div class="cta" id="contact"><div class="wrap cta-grid">
 <div data-reveal>
 <h2>Planning a pipeline or tank project?</h2>
 <p>Tell us your requirements and we will respond with a tailored solution and quotation.</p>
@@ -109,9 +109,9 @@ CTA = '''<div class="cta" id="contact"><div class="wrap cta-grid">
 <a class="btn btn-outline" href="tel:+60126451885">Call us</a></div></div>
 <div class="map" data-reveal><iframe title="Map of Asia Track head office" src="https://maps.google.com/maps?q=Asia+Track+Sdn+Bhd+11+Lorong+Pokok+Kayu+Manis+2+Luyang+Commercial+Centre+88300+Kota+Kinabalu+Sabah&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div></section>
-</div>
-</main>
 '''
+CTA = '</div>\n</main>\n'  # pages other than Contact end here (no form or map)
+
 
 FOOT = f'''<footer><div class="wrap">
 <div class="cols">
@@ -183,7 +183,7 @@ home += f'''<div id="top" class="hero"><div class="blueprint" aria-hidden="true"
 <div><div class="eyebrow" data-reveal>Sabah · Pipeline &amp; Water Tank Specialists</div>
 <h1 data-reveal>Excellence in every drop. <em>Strength in every pipe.</em></h1>
 <p class="lead" data-reveal>Pipe fabrication, water pump and stainless steel tank supply, and tank installation and refurbishment, engineered to project specifications for industrial, commercial and infrastructure clients.</p>
-<div class="hero-cta" data-reveal><a class="btn btn-primary" href="#contact">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="hero-cta" data-reveal><a class="btn btn-primary" href="contact.html">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 <a class="btn btn-ghost" href="portfolio.html">View Our Projects</a></div></div>
 <div class="hero-visual" data-3d="home" aria-hidden="true">{FALLBACK_SVG}<span class="ph-note">Placeholder graphic</span></div>
 </div></div>
@@ -330,7 +330,7 @@ def pdetail(idn, flip, title, icon, intro, lists, closing):
     return f'''<div class="pdetail{" flip" if flip else ""}" id="{idn}">
 <div class="pvis" data-reveal>{photo(*PD_IMG[title]) if title in PD_IMG else ico(icon, 120, 1) + '<small>Product photo placeholder</small>'}</div>
 <div data-reveal><h2>{title}</h2>{intro}{blocks}<p style="margin-top:20px;color:var(--muted-fg)">{closing}</p>
-<p style="margin-top:20px"><a class="btn btn-primary" href="https://wa.me/60126451885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20{title.replace(' ','%20')}." target="_blank" rel="noopener">Enquire about {title} on WhatsApp</a> <a class="btn btn-outline" href="#contact">Request a quote</a></p></div></div>'''
+<p style="margin-top:20px"><a class="btn btn-primary" href="https://wa.me/60126451885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20{title.replace(' ','%20')}." target="_blank" rel="noopener">Enquire about {title} on WhatsApp</a> <a class="btn btn-outline" href="contact.html">Request a quote</a></p></div></div>'''
 products += '<section><div class="wrap">' + \
  pdetail('ss', False, 'Stainless Steel Tank', I_CYL,
   '<p>Stainless steel sectional tanks for hygienic, long-lasting water storage. The modular panel system allows flexible sizing and efficient installation for residential, commercial and industrial sites.</p>',
@@ -364,6 +364,11 @@ portfolio += f'''<section><div class="wrap">
 pages['portfolio.html'] = portfolio
 
 pages['thank-you.html'] = head('Thank you | Asia Track', 'Thank you for your enquiry.', 'thank-you.html').replace('<meta charset="utf-8">','<meta charset="utf-8">\n<meta name="robots" content="noindex">') + '<section><div class="wrap" style="text-align:center;padding:60px 0"><img src="assets/img/logo.png" alt="Asia Track (M) Sdn. Bhd." width="220" height="87" style="margin:0 auto 28px;height:auto;max-width:220px"><div class="eyebrow" style="justify-content:center">Enquiry received</div><h1 style="font-size:clamp(32px,4vw,48px);color:var(--primary);margin-bottom:16px">Thank you!</h1><p style="color:var(--muted-fg);max-width:520px;margin:0 auto 28px">We have received your request and will get back to you shortly. For urgent matters, message us on WhatsApp.</p><a class="btn btn-primary" href="index.html">Back to home</a></div></section></main>' + FOOT
+contact = head('Contact Us | Request a Quotation — Asia Track', 'Contact Asia Track (M) Sdn. Bhd. in Kota Kinabalu for pipeline fabrication, tank installation and refurbishment, and water pump enquiries. Request a quotation or visit our office.', 'contact.html')
+contact += phero('Contact', 'Let’s talk about <em>your project</em>', 'Send us your requirements and we will respond with a tailored solution and quotation, or visit our office in Kota Kinabalu.', 'home')
+contact += CONTACT_BLOCK + CTA + FOOT
+pages['contact.html'] = contact
+
 for name, content in pages.items():
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
         f.write(content)
