@@ -29,6 +29,10 @@ I_PANEL = 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v16M15 4v16'
 LD = """
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Asia Track (M) Sdn. Bhd.","description":"Pipeline fabrication, plumbing and water tank installation and refurbishment specialists in Sabah.","url":"https://asiatrack.com.my/","telephone":"+60126451885","email":"info@asiatrack.com.my","address":{"@type":"PostalAddress","streetAddress":"11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre","addressLocality":"Kota Kinabalu","postalCode":"88300","addressRegion":"Sabah","addressCountry":"MY"},"areaServed":["Sabah","Malaysia"],"sameAs":["https://web.facebook.com/asiatrackofficial/","https://www.instagram.com/asiatrackofficial/"]}</script>"""
 
+VT_JS = r'''<script>(function(){var o=['index','about','services','products','portfolio'];function k(u){var p=new URL(u,location.href).pathname.replace(/\/+$/,'').split('/').pop().replace(/\.html$/,'');return p||'index'}function d(a,b){return o.indexOf(k(b))<o.indexOf(k(a))?'back':'fwd'}
+addEventListener('pageswap',function(e){try{if(e.viewTransition&&e.activation&&e.activation.from&&e.activation.entry)document.documentElement.dataset.dir=d(e.activation.from.url,e.activation.entry.url)}catch(x){}});
+addEventListener('pagereveal',function(e){try{if(e.viewTransition&&navigation.activation&&navigation.activation.from){document.documentElement.dataset.dir=d(navigation.activation.from.url,navigation.activation.entry.url);document.documentElement.classList.add('vt')}}catch(x){}});})();</script>'''
+
 def head(title, desc, active):
     nav = ''.join(
         f'<li><a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a></li>' for h, t in NAV)
@@ -51,6 +55,7 @@ def head(title, desc, active):
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/site.css">
+{VT_JS}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -75,7 +80,8 @@ def phero(crumb, h1, lead, variant):
 <div><div class="crumbs"><a href="index.html">Home</a> / {crumb}</div>
 <h1 data-reveal>{h1}</h1><p data-reveal>{lead}</p></div>
 <div class="hero-visual" data-3d="{variant}" aria-hidden="true">{FALLBACK_SVG}</div>
-</div></div>'''
+</div></div>
+<div class="pcontent">'''
 
 CTA = '''<div class="cta" id="contact"><div class="wrap cta-grid">
 <div data-reveal>
@@ -103,6 +109,7 @@ CTA = '''<div class="cta" id="contact"><div class="wrap cta-grid">
 <a class="btn btn-outline" href="tel:+60126451885">Call us</a></div></div>
 <div class="map" data-reveal><iframe title="Map of Asia Track head office" src="https://maps.google.com/maps?q=Asia+Track+Sdn+Bhd+11+Lorong+Pokok+Kayu+Manis+2+Luyang+Commercial+Centre+88300+Kota+Kinabalu+Sabah&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div></section>
+</div>
 </main>
 '''
 
@@ -180,11 +187,12 @@ home += f'''<div id="top" class="hero"><div class="blueprint" aria-hidden="true"
 <a class="btn btn-ghost" href="portfolio.html">View Our Projects</a></div></div>
 <div class="hero-visual" data-3d="home" aria-hidden="true">{FALLBACK_SVG}<span class="ph-note">Placeholder graphic</span></div>
 </div></div>
+<div class="pcontent">
 <div class="wrap stats"><ul>
 <li data-reveal><b data-count="8">0</b><span>Industries served</span></li>
 <li data-reveal><b data-count="6">0</b><span>Pipe materials fabricated</span></li>
 <li data-reveal><b data-count="4">0</b><span>Tank panel materials</span></li>
-<li data-reveal><b data-count="2">0</b><span>Offices: Sabah &amp; Kuala Lumpur</span></li>
+<li data-reveal><b data-count="2">0</b><span>Core services: pipelines &amp; tanks</span></li>
 </ul></div>
 <section id="services"><div class="wrap">
 {sec_head('Our Services', 'Where quality comes first', 'Complete pipeline and water tank solutions, built by a skilled team with strict quality control from design support to installation readiness.')}

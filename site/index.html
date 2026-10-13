@@ -18,6 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/site.css">
+<script>(function(){var o=['index','about','services','products','portfolio'];function k(u){var p=new URL(u,location.href).pathname.replace(/\/+$/,'').split('/').pop().replace(/\.html$/,'');return p||'index'}function d(a,b){return o.indexOf(k(b))<o.indexOf(k(a))?'back':'fwd'}
+addEventListener('pageswap',function(e){try{if(e.viewTransition&&e.activation&&e.activation.from&&e.activation.entry)document.documentElement.dataset.dir=d(e.activation.from.url,e.activation.entry.url)}catch(x){}});
+addEventListener('pagereveal',function(e){try{if(e.viewTransition&&navigation.activation&&navigation.activation.from){document.documentElement.dataset.dir=d(navigation.activation.from.url,navigation.activation.entry.url);document.documentElement.classList.add('vt')}}catch(x){}});})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -43,11 +46,12 @@
 <path class="pipe-line thin draw" d="M30 90 H190 a40 40 0 0 1 40 40 V230 a40 40 0 0 0 40 40 H370"/>
 <rect x="250" y="300" width="110" height="80" rx="14" fill="rgba(14,165,198,.18)" stroke="#7dd3fc" stroke-width="3"/></svg><span class="ph-note">Placeholder graphic</span></div>
 </div></div>
+<div class="pcontent">
 <div class="wrap stats"><ul>
 <li data-reveal><b data-count="8">0</b><span>Industries served</span></li>
 <li data-reveal><b data-count="6">0</b><span>Pipe materials fabricated</span></li>
 <li data-reveal><b data-count="4">0</b><span>Tank panel materials</span></li>
-<li data-reveal><b data-count="2">0</b><span>Offices: Sabah &amp; Kuala Lumpur</span></li>
+<li data-reveal><b data-count="2">0</b><span>Core services: pipelines &amp; tanks</span></li>
 </ul></div>
 <section id="services"><div class="wrap">
 <div class="sec-head" data-reveal><div class="eyebrow">Our Services</div><h2>Where quality comes first</h2><p>Complete pipeline and water tank solutions, built by a skilled team with strict quality control from design support to installation readiness.</p></div>
@@ -126,6 +130,7 @@
 <a class="btn btn-outline" href="tel:+60126451885">Call us</a></div></div>
 <div class="map" data-reveal><iframe title="Map of Asia Track head office" src="https://maps.google.com/maps?q=Asia+Track+Sdn+Bhd+11+Lorong+Pokok+Kayu+Manis+2+Luyang+Commercial+Centre+88300+Kota+Kinabalu+Sabah&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div></section>
+</div>
 </main>
 <footer><div class="wrap">
 <div class="cols">

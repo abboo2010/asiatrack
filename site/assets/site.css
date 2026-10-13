@@ -321,3 +321,24 @@ footer .social{display:flex;gap:18px;flex-wrap:wrap}footer .social a{display:inl
 .pbody{padding:18px 20px}.pbody h3{font-size:18px;color:var(--primary);margin-bottom:4px}.pbody p{font-size:14.5px;color:var(--muted-fg)}
 @media(max-width:1000px){.pumpgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.pumpgrid{grid-template-columns:1fr}}
+
+/* page transitions: header, hero banner and footer stay; page content slides left/right */
+@view-transition{navigation:auto}
+.topbar{view-transition-name:topbar}
+header.nav{view-transition-name:nav}
+.hero,.phero{view-transition-name:hero}
+.pcontent{view-transition-name:content}
+footer{view-transition-name:site-footer}
+.fab{view-transition-name:fab}.callfab{view-transition-name:callfab}
+.vt [data-reveal]{opacity:1!important;translate:none!important}
+::view-transition-group(content){overflow:clip;animation-duration:.5s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+::view-transition-old(content){animation:vt-out-left .5s cubic-bezier(.22,1,.36,1) both}
+::view-transition-new(content){animation:vt-in-right .5s cubic-bezier(.22,1,.36,1) both}
+html[data-dir=back]::view-transition-old(content){animation-name:vt-out-right}
+html[data-dir=back]::view-transition-new(content){animation-name:vt-in-left}
+::view-transition-group(hero){animation-duration:.5s}
+@keyframes vt-out-left{to{transform:translateX(-100%)}}
+@keyframes vt-in-right{from{transform:translateX(100%)}}
+@keyframes vt-out-right{to{transform:translateX(100%)}}
+@keyframes vt-in-left{from{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
