@@ -331,9 +331,9 @@ products += '<section><div class="wrap">' + \
   'Supplied with installation, refurbishment and after-sales support.') + \
  pdetail('pumps', True, 'Water Pumps', I_PUMP,
   '<p>Water pumps for supply, boosting and transfer, selected to match your flow and pressure requirements, with installation and servicing by our team.</p>',
-  [('Pump range', ['Booster pumps', 'Submersible pumps', 'Centrifugal pumps', 'Transfer pumps']),
-   ('Applications', ['Building water supply and pressure boosting', 'Water treatment plants and pump stations', 'Industrial and process systems'])],
+  [('Applications', ['Building water supply and pressure boosting', 'Water treatment plants and pump stations', 'Industrial and process systems'])],
   'Supply, installation and servicing available.') + \
+ '<div class="pumpgrid" id="pump-range">' + ''.join(f'<article class="pump" data-reveal><div class="pimg"><img src="assets/img/pump-placeholder.svg" alt="Pump {n} photo coming soon" loading="lazy" width="400" height="300"><span class="soon">Coming soon</span></div><div class="pbody"><h3>Pump {n}</h3><p>Details and photo coming soon.</p></div></article>' for n in range(1, 5)) + '</div>' + \
  pdetail('sectional', False, 'Sectional Panel Tanks', I_PANEL,
   '<p>High-quality sectional panel tanks for reliable water storage in residential, commercial and industrial applications. A modular panel system allows flexible sizing and efficient installation to suit various site requirements, while maintaining compliance with project specifications and water industry standards.</p>',
   [('Available materials', ['HDG (Hot-Dip Galvanized Steel) — durable and corrosion-resistant, suited to outdoor and utility installations', 'FRP (Fibre Reinforced Plastic) — lightweight, corrosion-resistant, low maintenance', 'GRP (Glass Reinforced Plastic) — high strength and chemical resistance for harsh environments']),
