@@ -342,3 +342,5 @@ html[data-dir=back]::view-transition-new(content){animation-name:vt-in-left}
 @keyframes vt-out-right{to{transform:translateX(100%)}}
 @keyframes vt-in-left{from{transform:translateX(-100%)}}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+
+.legal a{color:#e2e8f0;text-decoration:underline;text-underline-offset:3px}.legal a:hover{color:#fff}
