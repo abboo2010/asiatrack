@@ -66,3 +66,20 @@ if(M&&!reduce){
   document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=el.dataset.count});
 }
 })();
+
+// Photo lightbox
+(function(){
+var imgs=document.querySelectorAll('.shot img,.proj img,.prod img,.pvis img');
+if(!imgs.length)return;
+var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Photo viewer');
+lb.innerHTML='<button type="button" aria-label="Close photo">&times;</button><img alt=""><p></p>';
+document.body.appendChild(lb);
+var big=lb.querySelector('img'),cap=lb.querySelector('p'),x=lb.querySelector('button'),last=null;
+function open(i){last=i;big.src=i.currentSrc||i.src;big.alt=i.alt;cap.textContent=i.alt;lb.classList.add('open');x.focus()}
+function close(){lb.classList.remove('open');if(last)last.focus()}
+imgs.forEach(function(i){i.classList.add('lb-img');i.tabIndex=0;i.setAttribute('role','button');
+ i.addEventListener('click',function(){open(i)});
+ i.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i)}})});
+lb.addEventListener('click',function(e){if(e.target!==big)close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
+})();

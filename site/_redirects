@@ -1,0 +1,3 @@
+# Old Joomla links -> new pages (add more once old URLs are known)
+/index.php  /  301
+/index.php/*  /  301

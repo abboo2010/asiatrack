@@ -26,6 +26,9 @@ I_PUMP = 'M4 14h9a4 4 0 0 0 0-8h-1M4 14v5M13 6V4h4M8 14v-3a3 3 0 0 1 3-3'
 I_GRP = 'M2 9h20v6H2zM7 9v6M17 9v6'
 I_PANEL = 'M3 4h18v16H3zM3 9.3h18M3 14.7h18M9 4v16M15 4v16'
 
+LD = """
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Asia Track (M) Sdn. Bhd.","description":"Pipeline fabrication, plumbing and water tank installation and refurbishment specialists in Sabah.","url":"https://www.asiatrack.com.my/","telephone":"+60126501885","email":"enquiry@asiatrack.com.my","address":{"@type":"PostalAddress","streetAddress":"11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre","addressLocality":"Kota Kinabalu","postalCode":"88300","addressRegion":"Sabah","addressCountry":"MY"},"areaServed":["Sabah","Malaysia"]}</script>"""
+
 def head(title, desc, active):
     nav = ''.join(
         f'<li><a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a></li>' for h, t in NAV)
@@ -36,6 +39,13 @@ def head(title, desc, active):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="theme-color" content="#0F172A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Asia Track (M) Sdn. Bhd.">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="assets/img/hdg-tank.jpg">
+<meta property="og:locale" content="en_MY">{LD if active == 'index.html' else ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -67,13 +77,32 @@ def phero(crumb, h1, lead, variant):
 <div class="hero-visual" data-3d="{variant}" aria-hidden="true">{FALLBACK_SVG}</div>
 </div></div>'''
 
-CTA = '''<div class="cta" id="contact"><div class="wrap" data-reveal>
+CTA = '''<div class="cta" id="contact"><div class="wrap cta-grid">
+<div data-reveal>
 <h2>Planning a pipeline or tank project?</h2>
 <p>Tell us your requirements and we will respond with a tailored solution and quotation.</p>
 <div class="btns">
 <a class="btn wa" href="https://wa.me/60126451885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20a%20quotation." target="_blank" rel="noopener">Send Enquiry via WhatsApp</a>
 <a class="btn btn-ghost" href="mailto:enquiry@asiatrack.com.my">enquiry@asiatrack.com.my</a>
-</div></div></div>
+</div></div>
+<form class="quote" name="quote" method="POST" action="thank-you.html" data-netlify="true" netlify-honeypot="bot-field" data-reveal>
+<h3>Request a quotation</h3>
+<input type="hidden" name="form-name" value="quote">
+<p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<div class="row2"><label>Name<input name="name" required autocomplete="name"></label>
+<label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label></div>
+<label>Email<input name="email" type="email" autocomplete="email"></label>
+<label>I am interested in<select name="interest"><option>Pipe fabrication / pipeline</option><option>Tank installation &amp; refurbishment</option><option>Sectional panel tank</option><option>Stainless steel tank</option><option>Water pump</option><option>Plumbing</option><option>Other</option></select></label>
+<label>Project details<textarea name="message" rows="4" placeholder="Location, size, material, timeline"></textarea></label>
+<button class="btn btn-primary" type="submit">Send enquiry</button>
+</form></div></div>
+<section class="visit" aria-label="Visit our office"><div class="wrap visit-grid">
+<div data-reveal><div class="eyebrow">Visit us</div><h2>Head Office, Kota Kinabalu</h2>
+<p>11, Lorong Pokok Kayu Manis 2, Luyang Commercial Centre, 88300 Kota Kinabalu, Sabah</p>
+<div class="btns"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Asia+Track+Sdn+Bhd+11+Lorong+Pokok+Kayu+Manis+2+Luyang+Commercial+Centre+88300+Kota+Kinabalu+Sabah" target="_blank" rel="noopener">Get directions</a>
+<a class="btn btn-outline" href="tel:+60126501885">Call us</a></div></div>
+<div class="map" data-reveal><iframe title="Map of Asia Track head office" src="https://maps.google.com/maps?q=Asia+Track+Sdn+Bhd+11+Lorong+Pokok+Kayu+Manis+2+Luyang+Commercial+Centre+88300+Kota+Kinabalu+Sabah&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+</div></section>
 </main>
 '''
 
@@ -87,6 +116,7 @@ FOOT = f'''<footer><div class="wrap">
 </div>
 <div class="legal"><span>© Asia Track (M) Sdn. Bhd. All rights reserved.</span><span>Website redesign prototype</span></div>
 </div></footer>
+<a class="callfab" href="tel:+60126501885" aria-label="Call Asia Track"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
 <a class="fab" href="https://wa.me/60126451885" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.2.3-.3.5l-.5.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.3z"/></svg></a>
 <script src="assets/motion.js"></script>
 <script src="assets/hero3d.js"></script>
@@ -119,7 +149,7 @@ PROJ_IMG = {
  'Beaufort Water Treatment Plant Refurbishment': ('pump-valves.jpg', 'Pump station with blue valves and ductile iron elbows'),
 }
 def photo(src, alt, cls=''):
-    return f'<img class="{cls}" src="assets/img/{src}" alt="{alt}" loading="lazy">'
+    return f'<img class="{cls}" src="assets/img/{src}" alt="{alt}" loading="lazy" decoding="async">'
 
 def proj_card(p, link=False):
     t, tag, title, loc, desc, ic = p
@@ -291,7 +321,7 @@ def pdetail(idn, flip, title, icon, intro, lists, closing):
     return f'''<div class="pdetail{" flip" if flip else ""}" id="{idn}">
 <div class="pvis" data-reveal>{photo(*PD_IMG[title]) if title in PD_IMG else ico(icon, 120, 1) + '<small>Product photo placeholder</small>'}</div>
 <div data-reveal><h2>{title}</h2>{intro}{blocks}<p style="margin-top:20px;color:var(--muted-fg)">{closing}</p>
-<p style="margin-top:20px"><a class="btn btn-primary" href="#contact">Enquire about {title}</a></p></div></div>'''
+<p style="margin-top:20px"><a class="btn btn-primary" href="https://wa.me/60126451885?text=Hi%20Asia%20Track%2C%20I%20would%20like%20to%20enquire%20about%20{title.replace(' ','%20')}." target="_blank" rel="noopener">Enquire about {title} on WhatsApp</a> <a class="btn btn-outline" href="#contact">Request a quote</a></p></div></div>'''
 products += '<section><div class="wrap">' + \
  pdetail('ss', False, 'Stainless Steel Tank', I_CYL,
   '<p>Stainless steel sectional tanks for hygienic, long-lasting water storage. The modular panel system allows flexible sizing and efficient installation for residential, commercial and industrial sites.</p>',
@@ -324,7 +354,15 @@ portfolio += f'''<section><div class="wrap">
 ''' + CTA + FOOT
 pages['portfolio.html'] = portfolio
 
+pages['thank-you.html'] = head('Thank you | Asia Track', 'Thank you for your enquiry.', 'thank-you.html').replace('<meta charset="utf-8">','<meta charset="utf-8">\n<meta name="robots" content="noindex">') + '<section><div class="wrap" style="text-align:center;padding:60px 0"><div class="eyebrow" style="justify-content:center">Enquiry received</div><h1 style="font-size:clamp(32px,4vw,48px);color:var(--primary);margin-bottom:16px">Thank you!</h1><p style="color:var(--muted-fg);max-width:520px;margin:0 auto 28px">We have received your request and will get back to you shortly. For urgent matters, message us on WhatsApp.</p><a class="btn btn-primary" href="index.html">Back to home</a></div></section></main>' + FOOT
 for name, content in pages.items():
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as f:
         f.write(content)
+BASE='https://www.asiatrack.com.my/'
+with open(os.path.join(OUT,'sitemap.xml'),'w') as f:
+    f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{BASE}{"" if n=="index.html" else n}</loc></url>\n' for n in pages if n!='thank-you.html')+'</urlset>\n')
+with open(os.path.join(OUT,'robots.txt'),'w') as f:
+    f.write('User-agent: *\nAllow: /\nSitemap: '+BASE+'sitemap.xml\n')
+with open(os.path.join(OUT,'_redirects'),'w') as f:
+    f.write('# Old Joomla links -> new pages (add more once old URLs are known)\n/index.php  /  301\n/index.php/*  /  301\n')
 print('built', list(pages))
