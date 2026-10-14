@@ -363,3 +363,12 @@ html[data-dir=back]::view-transition-new(content){animation-name:vt-in-left}
 .phero p{font-size:15px;line-height:1.45}
 .phero .hero-visual{height:150px;border-radius:18px}
 @media(max-width:900px){.phero{padding:20px 0 22px}.phero .hero-visual{height:100px}}
+
+/* inner hero sized to match client's reference (~400px tall on desktop) */
+.phero{padding:36px 0 36px}
+.phero .wrap{gap:40px}
+.phero h1{font-size:clamp(32px,4vw,52px);margin-bottom:12px}
+.phero p{font-size:18px;line-height:1.55}
+.phero .crumbs{margin-bottom:10px}
+.phero .hero-visual{height:328px;border-radius:24px}
+@media(max-width:900px){.phero{padding:28px 0 30px}.phero .hero-visual{height:160px}.phero h1{font-size:clamp(28px,7vw,36px)}.phero p{font-size:16px}}
